@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EasyDNS Service")]
+[assembly: AssemblyTitle("WindowsService1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("theDiary Software")]
-[assembly: AssemblyProduct("EasyDNS Service")]
-[assembly: AssemblyCopyright("")]
-[assembly: AssemblyTrademark("theDiary Software")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("WindowsService1")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4efe26b8-84de-425f-ae97-23d3fd1e93fa")]
+[assembly: Guid("6848c66e-d7c7-4c22-b555-a22b592777f6")]
 
 // Version information for an assembly consists of the following four values:
 //

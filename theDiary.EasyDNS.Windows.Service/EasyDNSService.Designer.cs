@@ -1,6 +1,6 @@
 ﻿namespace theDiary.EasyDNS.Windows.Service
 {
-    partial class Service1
+    partial class EasyDNSService
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            // 
+            // EasyDNSService
+            // 
+            this.ServiceName = "EasyDNSService";
+
         }
 
         #endregion

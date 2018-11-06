@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}</ProjectGuid>
+    <ProjectGuid>{6848C66E-D7C7-4C22-B555-A22B592777F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>theDiary.EasyDNS.Windows.Service</RootNamespace>
-    <AssemblyName>theDiary.EasyDNS.Windows.Service</AssemblyName>
+    <RootNamespace>WindowsService1</RootNamespace>
+    <AssemblyName>WindowsService1</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsService1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

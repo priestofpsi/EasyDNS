@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:element name="ChangeDNS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" minOccurs="0" name="newConfiguration" nillable="true" type="q1:DNSConfiguration" />
+        <xs:element minOccurs="0" name="macAddress" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDNSConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="macAddress" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDNSConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" minOccurs="0" name="GetDNSConfigurationResult" nillable="true" type="q2:DNSOperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNetworkAdapters">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNetworkAdaptersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" minOccurs="0" name="GetNetworkAdaptersResult" nillable="true" type="q3:ArrayOfNetworkAdapterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnNetworkAdaptersChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" minOccurs="0" name="devices" nillable="true" type="q4:ArrayOfNetworkAdapterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnNetworkAdaptersChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnNetworkConfigurationChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" minOccurs="0" name="originalConfiguration" nillable="true" type="q5:NetworkAdapterInfo" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service" minOccurs="0" name="newConfiguration" nillable="true" type="q6:NetworkAdapterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnNetworkConfigurationChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnPublicIPAddressChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="originalIPAddress" nillable="true" type="q7:IPAddress" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System.Net" minOccurs="0" name="newIPAddress" nillable="true" type="q8:IPAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnPublicIPAddressChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

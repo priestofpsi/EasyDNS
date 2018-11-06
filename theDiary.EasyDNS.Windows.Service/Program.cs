@@ -12,14 +12,33 @@ namespace theDiary.EasyDNS.Windows.Service
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+
         static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new Service1()
-            };
-            ServiceBase.Run(ServicesToRun);
+            string[] args = Environment.GetCommandLineArgs();
+            Main(args.LastOrDefault());
         }
+
+        static void Main(string args)
+        {
+            if (!string.IsNullOrWhiteSpace(args) && args.Equals("console", StringComparison.OrdinalIgnoreCase))
+            {
+                EasyDNSConsole consoleRunner = new EasyDNSConsole();
+                consoleRunner.Start(null);
+                Console.ReadKey();
+                consoleRunner.Stop();
+            }
+            else
+            {
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[]
+                {
+                new EasyDNSService()
+                };
+                ServiceBase.Run(ServicesToRun);
+            }
+        }
+
+        internal static WriteEventLogEntryDelegate EventLogEntryDelegate;
     }
 }

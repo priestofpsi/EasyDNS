@@ -8,7 +8,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace theDiary.EasyDNS.Windows.Service
+namespace WindowsService1
 {
     public partial class Service1 : ServiceBase
     {

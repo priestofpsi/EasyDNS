@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c6203d8d-4356-4aab-b26b-5d0888ac35cd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8090/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6bc1feb1-f82e-4384-89a8-3037fee78d09" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c0fa7c3d-431b-4458-8727-73f65621117f" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="322c9998-d3fd-4195-b2df-50d1b910891f" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="theDiary.EasyDNS.Windows.Service.xsd" MetadataType="Schema" ID="47e3b06c-fe9b-4568-826e-33d61b34fe68" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="System.Net.xsd" MetadataType="Schema" ID="fc90e59f-6a82-46a8-b3cb-3bc188c27217" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="System.Net.Sockets.xsd" MetadataType="Schema" ID="247e2236-02b4-4550-9d3a-75cc856a2d1c" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="eebbe342-0523-42c4-885a-972d6678caf1" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,42 @@
+﻿using System;
+using System.ServiceModel;
+using System.ServiceModel.Discovery;
+using System.ServiceProcess;
+
+namespace theDiary.EasyDNS.Windows.Service
+{
+    public partial class EasyDNSService : ServiceBase
+    {
+        public EasyDNSService()
+        {
+            InitializeComponent();
+
+        }
+
+        #region Private Declarations
+        private volatile ServiceHost host;
+        private readonly object syncObject = new object();
+        #endregion
+
+        protected override void OnStart(string[] args)
+        {
+            lock (this.syncObject)
+            {
+                this.host = new ServiceHost(typeof(WCFServices.DNSService));                
+                this.host.Description.Behaviors.Add(new ServiceDiscoveryBehavior());
+                this.host.AddServiceEndpoint(new UdpDiscoveryEndpoint());
+                this.host.Open();
+                Program.EventLogEntryDelegate = this.EventLog.WriteEntry;
+            }
+        }
+
+        protected override void OnStop()
+        {
+            lock (this.syncObject)
+            {
+                this.host.Close();
+                this.host = null;
+            }
+        }
+    }
+}
