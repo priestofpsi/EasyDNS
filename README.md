@@ -1,0 +1,2 @@
+# EasyDNS
+DNS Switching Application
