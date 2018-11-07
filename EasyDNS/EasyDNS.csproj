@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iTools.ico" />
+    <None Include="Resources\close-button-png-30226.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

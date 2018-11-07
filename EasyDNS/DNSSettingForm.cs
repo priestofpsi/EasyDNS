@@ -12,15 +12,15 @@ using System.Windows.Forms;
 
 namespace theDiary.EasyDNS.Windows
 {
-    public partial class DNSSettingForm : BorderlessForm, IModalValue
+    public partial class DNSSettingForm
+        : BorderlessForm, IModalValue
     {
         public DNSSettingForm()
         {
             InitializeComponent();
             this.FormClosing += (s, e) => e.Cancel = this.DialogResult != DialogResult.Cancel && !this.ValidateChildren();
-            this.lblClose.Click += (s, e) => this.btnCancel.PerformClick();
+            this.imgClose.Click += (s, e) => this.btnCancel.PerformClick();
             this.txtName.Validating += this.ValidateName;
-            this.primaryDNS.Validating += this.ValidateIPAddress;
 
             this.Shown += (s, e) =>
             {
@@ -28,30 +28,17 @@ namespace theDiary.EasyDNS.Windows
                 this.lblTitle.Text = $"{titleText} DNS Configuration";
                 if (this.value == null)
                     this.value = new DNSSetting();
-
-                //this.txtName.DataBindings.Add(new Binding("Text", this.Value, "Name", false, DataSourceUpdateMode.OnValidation));
-                //this.primaryDNS.DataBindings.Add(new Binding("Text", this.Value, "PrimaryDNSText", false, DataSourceUpdateMode.OnValidation));
-                //this.secondaryDNS.DataBindings.Add(new Binding("Text", this.Value, "SecondaryDNSText", false, DataSourceUpdateMode.OnValidation));
             };
         }
 
-        private void ValidateIPAddress(object sender, CancelEventArgs e)
-        {
-            
-            
-        }
-
-        private void ValidateName(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(this.Value.Name))
-            {
-                e.Cancel = true;
-                this.errorProvider.SetError(this.txtName, "The Name is required.");
-                this.txtName.Focus();
-            }
-        }
-
+        #region Private Declarations
         private DNSSetting value;
+        #endregion
+
+        #region Properties
+        /// <summary>
+        /// Gets or sets the <see cref="DNSSetting"/> instance to be edited.
+        /// </summary>
         public DNSSetting Value
         {
             get
@@ -73,6 +60,9 @@ namespace theDiary.EasyDNS.Windows
             }
         }
 
+        /// <summary>
+        /// Gets or sets the<see cref= "DNSSetting" /> instance to be edited, for the <see cref="IModalValue"/> implementation.
+        /// </summary>
         dynamic IModalValue.Value
         {
             get
@@ -84,10 +74,20 @@ namespace theDiary.EasyDNS.Windows
                 this.Value = value;
             }
         }
+        #endregion
 
-        private void btnSave_Validating(object sender, CancelEventArgs e)
+        #region Private Methods &* Functions
+        private void ValidateName(object sender, CancelEventArgs e)
         {
-            
+            if (!string.IsNullOrWhiteSpace(this.Value.Name))
+                return;
+
+            e.Cancel = true;
+            this.errorProvider.SetError(this.txtName, "The Name is required.");
+            this.txtName.Focus();
         }
+        #endregion
+
+        
     }
 }

@@ -33,20 +33,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblClose = new System.Windows.Forms.Label();
             this.primaryDNS = new theDiary.EasyDNS.Windows.Controls.IPAddressControl();
             this.secondaryDNS = new theDiary.EasyDNS.Windows.Controls.IPAddressControl();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.imgClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(111, 35);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(218, 20);
             this.txtName.TabIndex = 0;
@@ -81,24 +82,10 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Secondary DNS:";
             // 
-            // lblClose
-            // 
-            this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClose.AutoSize = true;
-            this.lblClose.CausesValidation = false;
-            this.lblClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClose.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblClose.Location = new System.Drawing.Point(317, 5);
-            this.lblClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblClose.Name = "lblClose";
-            this.lblClose.Size = new System.Drawing.Size(21, 20);
-            this.lblClose.TabIndex = 8;
-            this.lblClose.Text = "X";
-            // 
             // primaryDNS
             // 
             this.primaryDNS.Location = new System.Drawing.Point(111, 67);
-            this.primaryDNS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.primaryDNS.Margin = new System.Windows.Forms.Padding(4);
             this.primaryDNS.Name = "primaryDNS";
             this.primaryDNS.Size = new System.Drawing.Size(132, 20);
             this.primaryDNS.TabIndex = 9;
@@ -107,7 +94,7 @@
             // secondaryDNS
             // 
             this.secondaryDNS.Location = new System.Drawing.Point(111, 99);
-            this.secondaryDNS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.secondaryDNS.Margin = new System.Windows.Forms.Padding(4);
             this.secondaryDNS.Name = "secondaryDNS";
             this.secondaryDNS.Size = new System.Drawing.Size(132, 20);
             this.secondaryDNS.TabIndex = 10;
@@ -139,7 +126,6 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Validating += new System.ComponentModel.CancelEventHandler(this.btnSave_Validating);
             // 
             // lblTitle
             // 
@@ -151,6 +137,17 @@
             this.lblTitle.TabIndex = 13;
             this.lblTitle.Text = "label4";
             // 
+            // imgClose
+            // 
+            this.imgClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgClose.Image = global::theDiary.EasyDNS.Windows.Properties.Resources.close_button_png_30226;
+            this.imgClose.Location = new System.Drawing.Point(320, 1);
+            this.imgClose.Name = "imgClose";
+            this.imgClose.Size = new System.Drawing.Size(32, 19);
+            this.imgClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgClose.TabIndex = 19;
+            this.imgClose.TabStop = false;
+            // 
             // DNSSettingForm
             // 
             this.AcceptButton = this.btnSave;
@@ -160,21 +157,22 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(353, 166);
+            this.Controls.Add(this.imgClose);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.secondaryDNS);
             this.Controls.Add(this.primaryDNS);
-            this.Controls.Add(this.lblClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(353, 166);
             this.Name = "DNSSettingForm";
             this.Text = "DNSSettingForm";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,12 +184,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblClose;
         private Controls.IPAddressControl primaryDNS;
         private Controls.IPAddressControl secondaryDNS;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox imgClose;
     }
 }

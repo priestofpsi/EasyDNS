@@ -30,6 +30,18 @@ namespace theDiary.EasyDNS.Windows
         }
 
         /// <summary>
+        /// Determines if an enumerable sequence is <c>Null</c> or <c>Empty</c>.
+        /// </summary>
+        /// <typeparam name="T">The <see cref="Type"/>of the sequence to check.</typeparam>
+        /// <param name="instance">The enumerable instance to check.</param>
+        /// <returns><c>True</c> if the <paramref name="instance"/> is <c>Null</c> or <c>Empty</c>; Otherwise <c>False</c>.</returns>
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> instance)
+        {
+            return instance == null 
+                || instance.Count() == 0;
+        }
+
+        /// <summary>
         /// Executes the specified delegate on the thread that owns the control's underlying window handle.
         /// </summary>
         /// <param name="control">A <see cref="System.Windows.Forms.Control"/> instance.</param>

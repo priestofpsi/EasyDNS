@@ -21,6 +21,7 @@ namespace theDiary.EasyDNS.Windows
         /// Initializes a new instance of the <see cref="Settings"/> class.
         /// </summary>
         private Settings()
+            : base()
         {
             this.DNSSettings = new DNSSettingCollection();
         }

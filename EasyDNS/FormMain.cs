@@ -27,9 +27,7 @@ namespace theDiary.EasyDNS.Windows
             this.imgManageDNS.Click += (s, e) => this.manageDNSMenu.Show(Form.MousePosition);
             this.imgLogo.MouseDown += (s, e) => base.OnMouseDown(e);
             this.imgChangeDNS.Click += (s, e) => this.ChangeDeviceDNS();
-            this.lblClose.MouseEnter += (s, e) => this.lblClose.ForeColor = System.Drawing.Color.Red;
-            this.lblClose.MouseLeave += (s, e) => this.lblClose.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblClose.Click += (s, e) => Application.Exit();
+            this.imgClose.Click += (s, e) => Application.Exit();
             this.exitToolStripMenuItem.Click += (s, e) => Application.Exit();
             this.Shown += this.Form1_Shown;
             this.FormClosing += (s, e) => Settings.Instance.FormSize = this.Size;
@@ -62,6 +60,9 @@ namespace theDiary.EasyDNS.Windows
         #endregion
 
         #region Public Properties
+        /// <summary>
+        /// Gets the selected <see cref="NetworkDevice"/>.
+        /// </summary>
         public NetworkDevice SelectedNetworkDevice
         {
             get
@@ -72,6 +73,9 @@ namespace theDiary.EasyDNS.Windows
             }
         }
 
+        /// <summary>
+        /// Gets the selected <see cref="DNSSetting"/>.
+        /// </summary>
         public DNSSetting SelectedDNSSetting
         {
             get
@@ -89,13 +93,12 @@ namespace theDiary.EasyDNS.Windows
         {
             if (Settings.Instance.DNSSettings.Count == 0)
             {
-                Settings.Instance.DNSSettings["Home"] = new DNSSetting("Home", "192.168.0.1");
+                Settings.Instance.DNSSettings["Home"]  = new DNSSetting("Home", "192.168.0.1");
                 Settings.Instance.DNSSettings["Google"] = new DNSSetting("Google", "8.8.8.8", "8.8.4.4");
                 Settings.Save();
             }
             Task.Run(() => this.InitializeNetworkAdapters());
         }
-
 
         private void ChangeDeviceDNS(DNSSetting newSetting = null)
         {
@@ -197,51 +200,7 @@ namespace theDiary.EasyDNS.Windows
                 return returnValue;
             }
         }
-        #endregion
 
-        #region Public Methods & Functions
-        private void InitializeNetworkAdapters(List<NetworkAdapterInfo> devices = null)
-        {
-            try
-            {
-                this.InitializeProxyService();
-                this.UpdateStatusMessage("Fetching Devices...");
-                if (devices == null)
-                    devices = this.proxy.GetNetworkAdapters();
-
-                this.Invoke(() =>
-                {
-                    this.OnNetworkAdaptersChanged(devices);
-                    if (this.SelectedNetworkDevice != null)
-                        this.BindDNSSettings();
-                });
-            }
-            catch (Exception error)
-            {
-                this.UpdateStatusMessage(error.Message, Color.Red);
-            }
-        }
-        public void OnNetworkAdaptersChanged(List<NetworkAdapterInfo> devices)
-        {
-            this.Invoke(() =>
-            {
-                this.cbDevices.BeginUpdate();
-                this.cbDevices.Items.Clear();
-                if (devices.Count > 0)
-                {   
-                    foreach (var device in devices)
-                        this.cbDevices.Items.Add(new NetworkDevice(device));
-                    this.cbDevices.SelectedIndex = 0;
-                }
-                this.cbDevices.EndUpdate();
-                if (this.SelectedNetworkDevice == null)
-                {
-                    this.imgChangeDNS.Visible = false;
-                    this.UpdateStatusMessage("No network devices available or found", Color.Red);
-                }
-
-            });
-        }
         private void BindDNSSettings()
         {
             this.Invoke(() =>
@@ -256,7 +215,66 @@ namespace theDiary.EasyDNS.Windows
                 this.UpdateStatusMessage("Ready");
             });
         }
-        public void OnNetworkConfigurationChanged(NetworkAdapterInfo originalConfiguration, NetworkAdapterInfo newConfiguration)
+
+        private void InitializeNetworkAdapters(List<NetworkAdapterInfo> devices = null)
+        {
+            try
+            {
+                this.InitializeProxyService();
+                this.UpdateStatusMessage("Fetching Devices...");
+                if (devices.IsNullOrEmpty())
+                    devices = this.proxy.GetNetworkAdapters();
+
+                this.Invoke(() =>
+                {
+                    this.OnNetworkAdaptersChanged(devices);
+                    if (this.SelectedNetworkDevice != null)
+                        this.BindDNSSettings();
+                });
+            }
+            catch (Exception error)
+            {
+                this.UpdateStatusMessage(error.Message, Color.Red);
+            }
+        }
+
+        private void HandleDNSSetting(object sender, EventArgs e, dynamic value)
+        {
+            this.Invoke(() =>
+            {
+                this.cbDNSSettings.BeginUpdate();
+                Settings.Instance.DNSSettings[value.Name] = value;
+                var dnsSource = new BindingList<DNSSetting>(Settings.Instance.DNSSettings);
+                this.cbDNSSettings.DataSource = new BindingSource() { DataSource = dnsSource };
+                this.cbDNSSettings.EndUpdate();
+            });
+        }
+        #endregion
+
+        #region IDNSServiceCallback Methods & Functions
+        public void OnNetworkAdaptersChanged(List<NetworkAdapterInfo> devices)
+        {
+            this.Invoke(() =>
+            {
+                this.cbDevices.BeginUpdate();
+                this.cbDevices.Items.Clear();
+                if (!devices.IsNullOrEmpty())
+                {
+                    foreach (var device in devices)
+                        this.cbDevices.Items.Add(new NetworkDevice(device));
+                    this.cbDevices.SelectedIndex = 0;
+                }
+                this.cbDevices.EndUpdate();
+                if (this.SelectedNetworkDevice == null)
+                {
+                    this.imgChangeDNS.Visible = false;
+                    this.UpdateStatusMessage("No network devices available or found", Color.Red);
+                }
+
+            });
+        }
+        
+        void DNSService.IDNSServiceCallback.OnNetworkConfigurationChanged(NetworkAdapterInfo originalConfiguration, NetworkAdapterInfo newConfiguration)
         {
             Task.Run(() =>
             {
@@ -273,27 +291,17 @@ namespace theDiary.EasyDNS.Windows
             });
         }
 
-        public void OnPublicIPAddressChanged(IPAddress originalIPAddress, IPAddress newIPAddress)
+        void DNSService.IDNSServiceCallback.OnPublicIPAddressChanged(IPAddress originalIPAddress, IPAddress newIPAddress)
         {
 
         }
 
-        public void HandleDNSSetting(object sender, EventArgs e, dynamic value)
-        {
-            this.Invoke(() =>
-            {
-                this.cbDNSSettings.BeginUpdate();
-                Settings.Instance.DNSSettings[value.Name] = value;
-                var dnsSource = new BindingList<DNSSetting>(Settings.Instance.DNSSettings);
-                this.cbDNSSettings.DataSource = new BindingSource() { DataSource = dnsSource };
-                this.cbDNSSettings.EndUpdate();
-            });
-        }
+        
         #endregion
 
         [DllImport("dnsapi.dll", EntryPoint = "DnsFlushResolverCache")]
         private static extern UInt32 DnsFlushResolverCache();
 
-        public delegate void ModalValueHandler(object sender, EventArgs e, dynamic value);
+        private delegate void ModalValueHandler(object sender, EventArgs e, dynamic value);
     }
 }

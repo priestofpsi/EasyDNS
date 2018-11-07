@@ -93,6 +93,16 @@ namespace theDiary.EasyDNS.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_button_png_30226 {
+            get {
+                object obj = ResourceManager.GetObject("close-button-png-30226", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap List_24px {
             get {
                 object obj = ResourceManager.GetObject("List_24px", resourceCulture);
