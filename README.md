@@ -15,8 +15,10 @@ No requirements for Elevated Privileges when switching your DNS, and no need to 
 -- Requires adding the files/folder to the exclusions.
 
 ## User Interface
-![enter image description here](https://images2.imgbox.com/d4/c9/tOlw7FJb_o.png)
+![Current DNS Setting matching the select DNS Setting](https://images2.imgbox.com/d4/c9/tOlw7FJb_o.png)
+
+![Current DNS Setting not matching the selected DNS Setting](https://images2.imgbox.com/84/8f/YnLzODQu_o.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODE4MDU0NTEsLTg3OTQ4MTIzMSwxNT
-k5NjE5MTk1XX0=
+eyJoaXN0b3J5IjpbLTIwNjc4NjA5MCwtODc5NDgxMjMxLDE1OT
+k2MTkxOTVdfQ==
 -->
