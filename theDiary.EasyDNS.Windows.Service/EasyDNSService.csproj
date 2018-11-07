@@ -79,6 +79,7 @@
     <Compile Include="DNSConfiguration.cs" />
     <Compile Include="DNSHelper.cs" />
     <Compile Include="EasyDNSConsole.cs" />
+    <Compile Include="EasyDNSServiceHost.cs" />
     <Compile Include="EventLogEventArgs.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="NetworkAdapterInfo.cs" />

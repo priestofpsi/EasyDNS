@@ -22,10 +22,9 @@ namespace theDiary.EasyDNS.Windows.Service
         {
             lock (this.syncObject)
             {
-                this.host = new ServiceHost(typeof(WCFServices.DNSService));                
-                this.host.Description.Behaviors.Add(new ServiceDiscoveryBehavior());
-                this.host.AddServiceEndpoint(new UdpDiscoveryEndpoint());
+                this.host = new EasyDNSServiceHost();
                 this.host.Open();
+
                 Program.EventLogEntryDelegate = this.EventLog.WriteEntry;
             }
         }

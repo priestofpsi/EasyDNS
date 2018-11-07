@@ -10,21 +10,14 @@ namespace theDiary.EasyDNS.Windows.Service
 {
     public class EasyDNSConsole
     {
-        private volatile ServiceHost host;
+        private volatile EasyDNSServiceHost host;
         private readonly object syncObject = new object();
 
         public void Start(string[] args)
         {
             lock (this.syncObject)
             {
-                this.host = new ServiceHost(typeof(WCFServices.DNSService));//, new Uri[] { new Uri("127.0.0.1") });
-                this.host.Description.Behaviors.Add(new ServiceDiscoveryBehavior());
-                
-                this.host.AddServiceEndpoint(new UdpDiscoveryEndpoint());
-                this.host.Opening += this.StateChangeHandler;
-                this.host.Opened += this.StateChangeHandler;
-                this.host.Closing += this.StateChangeHandler;
-                this.host.Closed += this.StateChangeHandler;
+                this.host = new EasyDNSServiceHost(this.StateChangeHandler);
                 this.host.Open();
 
                 Program.EventLogEntryDelegate = this.WriteEventLog;
