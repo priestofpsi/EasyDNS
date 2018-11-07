@@ -25,7 +25,7 @@ namespace theDiary.EasyDNS.Windows.Service
                 this.host = new EasyDNSServiceHost();
                 this.host.Open();
 
-                Program.EventLogEntryDelegate = this.EventLog.WriteEntry;
+                //Program.EventLozxxg//EntryDelegate = this.EventLog.WriteEntry;
             }
         }
 

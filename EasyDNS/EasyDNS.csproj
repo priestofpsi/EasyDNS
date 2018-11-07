@@ -36,7 +36,28 @@
     <StartupObject>theDiary.EasyDNS.Windows.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iTools.ico</ApplicationIcon>
+    <ApplicationIcon>easyDNS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>EasyDNS.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D97002FACB6267C860B61EBEA2E8582903BFE999</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -153,6 +174,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="EasyDNS.snk" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,8 +207,11 @@
     <None Include="Resources\Logo_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="iTools.ico" />
+    <Content Include="easyDNS.ico" />
     <None Include="Resources\close-button-png-30226.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)\Setup" /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -3,24 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDNSService", "theDiary.EasyDNS.Windows.Service\EasyDNSService.csproj", "{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDNS", "EasyDNS\EasyDNS.csproj", "{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyDNSService", "EasyDNSService\EasyDNSService.csproj", "{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{B3EEA653-E7F8-4DDD-8427-998A02FDC426}"
+	ProjectSection(SolutionItems) = preProject
+		Setup\easyDNS.iss = Setup\easyDNS.iss
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Debug|x86.Build.0 = Debug|Any CPU
 		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Release|x86.ActiveCfg = Release|Any CPU
+		{1821E0FD-7BF7-48B4-8D8D-6AB4EE7AC041}.Release|x86.Build.0 = Release|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Debug|x86.Build.0 = Debug|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Release|x86.ActiveCfg = Release|Any CPU
+		{4EFE26B8-84DE-425F-AE97-23D3FD1E93FA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
