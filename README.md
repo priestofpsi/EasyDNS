@@ -17,8 +17,16 @@ No requirements for Elevated Privileges when switching your DNS, and no need to 
 ## User Interface
 ![Current DNS Setting matching the select DNS Setting](https://images2.imgbox.com/d4/c9/tOlw7FJb_o.png)
 
+> Because the New DNS and the Current DNS are the same, there is nothing
+> to do.
+
+
 ![Current DNS Setting not matching the selected DNS Setting](https://images2.imgbox.com/84/8f/YnLzODQu_o.png)
+
+> The play symbol on the right hand side indicates that the DNS can be
+> changed.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjc4NjA5MCwtODc5NDgxMjMxLDE1OT
+eyJoaXN0b3J5IjpbMTg1OTA5MTE0OSwtODc5NDgxMjMxLDE1OT
 k2MTkxOTVdfQ==
 -->
