@@ -26,8 +26,8 @@ Simply [download](https://github.com/priestofpsi/EasyDNS/raw/master/Setup/Output
 > The Play symbol on the right hand side indicates that the DNS can be
 > changed.
 
-Download EasyDNS Setup](https://github.com/priestofpsi/EasyDNS/raw/master/Setup/Output/EasyDNS%20Setup.exe)
+Download [EasyDNS Setup] here (https://github.com/priestofpsi/EasyDNS/raw/master/Setup/Output/EasyDNS%20Setup.exe)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA2NDQ2Nzk1LC0xODY3NzM0MDM1LC04Nz
-k0ODEyMzEsMTU5OTYxOTE5NV19
+eyJoaXN0b3J5IjpbLTE5MDIxNzIwNTgsLTE4Njc3MzQwMzUsLT
+g3OTQ4MTIzMSwxNTk5NjE5MTk1XX0=
 -->
