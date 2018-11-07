@@ -2,13 +2,14 @@
 ## What is EasyDNS?
 EasyDNS is an application designed to make switching of your DNS Servers easier and less intrusive.
 No requirements for Elevated Privileges when switching your DNS, and no need to manually flush your DNS either.
-### Features
 
+### The Good Features
  - Detects network device changes (*such as WiFi enabled/disabled*).
  - Simple User Interface
  - Completely free, including no adverts (***YAY***)
  - No Elevated Privileges required to quickly switch DNS servers.
-
+### The Bad Features
+![enter image description here](https://images2.imgbox.com/d4/c9/tOlw7FJb_o.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5OTYxOTE5NV19
+eyJoaXN0b3J5IjpbLTE3NjA3NDYwOSwxNTk5NjE5MTk1XX0=
 -->
