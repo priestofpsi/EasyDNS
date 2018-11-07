@@ -11,8 +11,10 @@ No requirements for Elevated Privileges when switching your DNS, and no need to 
 ### The Bad Features
  - Requires installing a Window's Service.
  - Still not idiot or bug proof.
+ - Some Anti Virus applications cause errors
+-- Requires adding the files/folder to the exclusions.
 
 ![enter image description here](https://images2.imgbox.com/d4/c9/tOlw7FJb_o.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg2NDMyODYzLDE1OTk2MTkxOTVdfQ==
+eyJoaXN0b3J5IjpbLTg3OTQ4MTIzMSwxNTk5NjE5MTk1XX0=
 -->
