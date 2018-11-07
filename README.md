@@ -6,10 +6,11 @@ No requirements for Elevated Privileges when switching your DNS, and no need to 
 
  - Detects network device changes (*such as WiFi enabled/disabled*).
  - Simple User Interface
- - Completely Free, includiing n
-
+ - Completely free, including no adverts (***YAY***)
+ - No Elevated Privileges required to quickly switch DNS servers.
+ - No configuration 
 Network change detection
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMDA2MDc4XX0=
+eyJoaXN0b3J5IjpbOTIxMjMyOTBdfQ==
 -->
