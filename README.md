@@ -8,9 +8,7 @@ No requirements for Elevated Privileges when switching your DNS, and no need to 
  - Simple User Interface
  - Completely free, including no adverts (***YAY***)
  - No Elevated Privileges required to quickly switch DNS servers.
- - No configuration 
-Network change detection
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIxMjMyOTBdfQ==
+eyJoaXN0b3J5IjpbMTU5OTYxOTE5NV19
 -->
