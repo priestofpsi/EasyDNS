@@ -159,9 +159,9 @@
   </wsdl:binding>
   <wsdl:service name="DNSService">
     <wsdl:port name="NetTcpBinding_IDNSService" binding="tns:NetTcpBinding_IDNSService">
-      <soap12:address location="net.tcp://localhost:8090/DNSService" />
+      <soap12:address location="net.tcp://jonathans-pc:8090/EasyDNS" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/DNSService</wsa10:Address>
+        <wsa10:Address>net.tcp://jonathans-pc:8090/EasyDNS</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Spn>host/JONATHANS-PC</Spn>
         </Identity>

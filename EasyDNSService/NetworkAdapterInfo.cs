@@ -5,10 +5,12 @@ using System.Management;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Runtime.Serialization;
+using System.Linq;
 
 namespace theDiary.EasyDNS.Windows.Service
 {
     [DataContract]
+    [KnownType(typeof(WirelessNetworkAdapterInfo))]
     public class NetworkAdapterInfo
     {
         #region Constructors
@@ -153,9 +155,11 @@ namespace theDiary.EasyDNS.Windows.Service
                 DNSConfiguration = this.DNSConfiguration
             };
         }
+
         #region Public Static Methods & Functions
         public static NetworkAdapterInfo[] GetAdapters()
         {
+            
             List<NetworkAdapterInfo> returnValue = new List<NetworkAdapterInfo>();
             var adaptors = DNSHelper.GetAvailableNetworkAdapters();
             foreach (var adaptor in adaptors)
@@ -163,10 +167,19 @@ namespace theDiary.EasyDNS.Windows.Service
                 NetworkInterface networkInterface;
                 var macAddress = adaptor.GetPropertyValue<string>("MACAddress").ToPhysicalAddress();
                 if (DNSHelper.TryGetNetworkInterface(macAddress, out networkInterface))
-                    returnValue.Add(new NetworkAdapterInfo(adaptor, networkInterface));
+                    returnValue.Add(NetworkAdapterInfo.Create(adaptor, networkInterface));
             }
 
             return returnValue.ToArray();
+        }
+
+        public static NetworkAdapterInfo Create(ManagementObject networkAdapter, NetworkInterface networkInterface)
+        {
+            WirelessNetworkInterface wirelessNetworkInterface = Runtime.Instance.WirelessDevices.FirstOrDefault(device => device.MACAddress.Equals(networkInterface.GetPhysicalAddress()));
+            if (wirelessNetworkInterface != null)
+                return new WirelessNetworkAdapterInfo(networkAdapter, networkInterface, wirelessNetworkInterface);
+
+            return new NetworkAdapterInfo(networkAdapter, networkInterface);
         }
         #endregion
     }

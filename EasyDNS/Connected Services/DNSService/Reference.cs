@@ -163,6 +163,7 @@ namespace theDiary.EasyDNS.Windows.DNSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="NetworkAdapterInfo", Namespace="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(theDiary.EasyDNS.Windows.DNSService.WirelessNetworkAdapterInfo))]
     public partial class NetworkAdapterInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -248,6 +249,125 @@ namespace theDiary.EasyDNS.Windows.DNSService {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WirelessNetworkAdapterInfo", Namespace="http://schemas.datacontract.org/2004/07/theDiary.EasyDNS.Windows.Service")]
+    [System.SerializableAttribute()]
+    public partial class WirelessNetworkAdapterInfo : theDiary.EasyDNS.Windows.DNSService.NetworkAdapterInfo {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AuthenticationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ChannelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RadioTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ReceiveSpeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SSIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SignalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TransmitSpeedField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Authentication {
+            get {
+                return this.AuthenticationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AuthenticationField, value) != true)) {
+                    this.AuthenticationField = value;
+                    this.RaisePropertyChanged("Authentication");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Channel {
+            get {
+                return this.ChannelField;
+            }
+            set {
+                if ((this.ChannelField.Equals(value) != true)) {
+                    this.ChannelField = value;
+                    this.RaisePropertyChanged("Channel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RadioType {
+            get {
+                return this.RadioTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RadioTypeField, value) != true)) {
+                    this.RadioTypeField = value;
+                    this.RaisePropertyChanged("RadioType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReceiveSpeed {
+            get {
+                return this.ReceiveSpeedField;
+            }
+            set {
+                if ((this.ReceiveSpeedField.Equals(value) != true)) {
+                    this.ReceiveSpeedField = value;
+                    this.RaisePropertyChanged("ReceiveSpeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SSID {
+            get {
+                return this.SSIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SSIDField, value) != true)) {
+                    this.SSIDField = value;
+                    this.RaisePropertyChanged("SSID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Signal {
+            get {
+                return this.SignalField;
+            }
+            set {
+                if ((this.SignalField.Equals(value) != true)) {
+                    this.SignalField = value;
+                    this.RaisePropertyChanged("Signal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TransmitSpeed {
+            get {
+                return this.TransmitSpeedField;
+            }
+            set {
+                if ((this.TransmitSpeedField.Equals(value) != true)) {
+                    this.TransmitSpeedField = value;
+                    this.RaisePropertyChanged("TransmitSpeed");
+                }
             }
         }
     }

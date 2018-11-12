@@ -117,8 +117,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime.Instance.cs" />
+    <Compile Include="Runtime.Singleton.cs" />
     <Compile Include="WCFServices\DNSService.cs" />
     <Compile Include="WCFServices\IDNSService.cs" />
+    <Compile Include="WirelessNetworkAdapterInfo.cs" />
+    <Compile Include="WirelessNetworkInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EasyDNS.snk" />

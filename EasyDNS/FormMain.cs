@@ -1,5 +1,6 @@
 ﻿using theDiary.EasyDNS.Windows.DNSService;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -154,10 +155,10 @@ namespace theDiary.EasyDNS.Windows
             if (findResponse.Endpoints.Count == 0)
                 return null;
 
-            Settings.Instance.EndPointAddressUri = findResponse.Endpoints[0].Address.Uri;
+            Settings.Instance.EndPointAddressUri = findResponse.Endpoints.Last().Address.Uri;
             Settings.Save();
 
-            return findResponse.Endpoints[0].Address;
+            return findResponse.Endpoints.Last().Address;
         }
 
         private DNSService.IDNSService CreateProxy(EndpointAddress address)

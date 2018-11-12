@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management;
 using System.Net.NetworkInformation;
+using System.Text;
 
 namespace theDiary.EasyDNS.Windows.Service
 {
@@ -10,6 +11,7 @@ namespace theDiary.EasyDNS.Windows.Service
     {
         #region Private Declarations
         private static string[] emptyDHCP = new string[] { "", "255.255.255.255" };
+        
         #endregion
 
         #region Private Properties
@@ -25,6 +27,9 @@ namespace theDiary.EasyDNS.Windows.Service
                 return adapters.Get();
             }
         }
+
+        
+
         #endregion
 
         #region Internal Static Methods
@@ -135,8 +140,74 @@ namespace theDiary.EasyDNS.Windows.Service
             return networkAdapter != null;
         }
         #endregion
-        #endregion
 
+
+        internal static IEnumerable<WirelessNetworkInterface> GetWirelessDevices()
+        {
+            string noInterfaces = "There is no wireless interface on the system.";
+            
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("netsh.exe", "wlan show interfaces");
+            psi.RedirectStandardOutput = true;
+            psi.UseShellExecute = false;
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo = psi;
+            process.Start();
+
+            StringBuilder sb = new StringBuilder(process.StandardOutput.ReadToEnd());
+            bool newDetails = true;
+            System.Collections.Generic.List<WirelessNetworkInterface> devices = new System.Collections.Generic.List<WirelessNetworkInterface>();
+            using (System.IO.StringReader reader = new System.IO.StringReader(sb.ToString()))
+            {
+                System.Collections.Generic.Dictionary<string, string> details = null;
+                var line = reader.ReadLine();
+                if (line != null && line.Trim().Equals(noInterfaces, System.StringComparison.OrdinalIgnoreCase))
+                    return null;
+
+                while (line != null)
+                {
+                    if (!string.IsNullOrWhiteSpace(line)
+                        && !line.Trim().EndsWith(":\r\n")
+                        && !IsNumberOfWirelessDevices(line))
+                    {
+                        if (newDetails && details == null)
+                        {
+                            newDetails = false;
+                            details = new System.Collections.Generic.Dictionary<string, string>();
+                        }
+                        var ab = line.Trim().Split(new string[] { " : " }, System.StringSplitOptions.None);
+                        details.Add(ab[0].Trim(), ab[1].Trim());
+                    }
+                    else if (!newDetails)
+                    {
+                        if (details.ContainsKey("Physical address"))
+                            devices.Add(new WirelessNetworkInterface(details));
+                        newDetails = true;
+                        details = null;
+                    }
+                    line = reader.ReadLine();
+                }
+            }
+
+            process.WaitForExit();
+
+            return devices;
+        }
+
+        private static bool IsNumberOfWirelessDevices(string value)
+        {
+            string txt = "There is 1 interface on the system:";
+
+            string re1 = "(There)( )(is)( )(\\d+)( )(interface)( )(on)( )(the)( )(system)(:)";   // Word 6
+            //string re2 = "(There\\s+is )(\\d+)( interface on the)( )(system)(:)";   // Word 6
+
+            System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex(re1, System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline);
+            System.Text.RegularExpressions.Match m = r.Match(value);
+            return m.Success;
+        }
+        
+
+
+        #endregion
 
     }
 }

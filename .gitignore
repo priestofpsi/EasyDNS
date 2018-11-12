@@ -262,3 +262,5 @@ __pycache__/
 *.pyc
 /Setup/EasyDNS.exe
 /Setup/EasyDNSService.exe
+/EasyDNS/app.config
+/EasyDNS/Connected Services/DNSService/System.Net1.xsd

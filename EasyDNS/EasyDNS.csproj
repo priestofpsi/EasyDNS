@@ -129,20 +129,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Connected Services\DNSService\Arrays.xsd">
+    <None Include="app.config" />
+    <None Include="Connected Services\DNSService\Arrays1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DNSService\service.wsdl" />
-    <None Include="Connected Services\DNSService\service.xsd">
+    <None Include="Connected Services\DNSService\service1.wsdl" />
+    <None Include="Connected Services\DNSService\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DNSService\service1.xsd">
+    <None Include="Connected Services\DNSService\service21.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DNSService\System.Net.Sockets.xsd">
+    <None Include="Connected Services\DNSService\System.Net.Sockets1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DNSService\System.Net.xsd">
+    <None Include="Connected Services\DNSService\System.Net1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\DNSService\theDiary.EasyDNS.Windows.DNSService.DNSOperationResult.datasource">
@@ -150,9 +151,6 @@
     </None>
     <None Include="Connected Services\DNSService\theDiary.EasyDNS.Windows.DNSService.NetworkAdapterInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\DNSService\theDiary.EasyDNS.Windows.Service.xsd">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +172,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\DNSService\theDiary.EasyDNS.Windows.Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EasyDNS.snk" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

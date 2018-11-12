@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="AdKvloEH7HxsrTVhKvQIsE3Wl+0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="rc2dyx3yHcjg/93EU9QAjApPleQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IDNSService">
       <properties>
@@ -121,10 +121,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IDNSService" contract="DNSService.IDNSService" bindingType="netTcpBinding" address="net.tcp://localhost:8090/DNSService" bindingConfiguration="NetTcpBinding_IDNSService">
+    <endpoint name="NetTcpBinding_IDNSService" contract="DNSService.IDNSService" bindingType="netTcpBinding" address="net.tcp://jonathans-pc:8090/EasyDNS" bindingConfiguration="NetTcpBinding_IDNSService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://localhost:8090/DNSService</serializedValue>
+          <serializedValue>net.tcp://jonathans-pc:8090/EasyDNS</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

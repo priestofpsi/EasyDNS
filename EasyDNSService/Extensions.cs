@@ -30,5 +30,18 @@ namespace theDiary.EasyDNS.Windows.Service
         {
             return PhysicalAddress.Parse(macAddress.Replace(':', '-'));
         }
+
+
+        /// <summary>
+        /// Determines if an enumerable sequence is <c>Null</c> or <c>Empty</c>.
+        /// </summary>
+        /// <typeparam name="T">The <see cref="Type"/>of the sequence to check.</typeparam>
+        /// <param name="instance">The enumerable instance to check.</param>
+        /// <returns><c>True</c> if the <paramref name="instance"/> is <c>Null</c> or <c>Empty</c>; Otherwise <c>False</c>.</returns>
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> instance)
+        {
+            return instance == null
+                || instance.Count() == 0;
+        }
     }
 }

@@ -21,16 +21,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="net.tcp://localhost:8090/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:8090/EasyDNS/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6bc1feb1-f82e-4384-89a8-3037fee78d09" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c0fa7c3d-431b-4458-8727-73f65621117f" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="322c9998-d3fd-4195-b2df-50d1b910891f" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
-    <MetadataFile FileName="theDiary.EasyDNS.Windows.Service.xsd" MetadataType="Schema" ID="47e3b06c-fe9b-4568-826e-33d61b34fe68" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
-    <MetadataFile FileName="System.Net.xsd" MetadataType="Schema" ID="fc90e59f-6a82-46a8-b3cb-3bc188c27217" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
-    <MetadataFile FileName="System.Net.Sockets.xsd" MetadataType="Schema" ID="247e2236-02b4-4550-9d3a-75cc856a2d1c" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="eebbe342-0523-42c4-885a-972d6678caf1" SourceId="1" SourceUrl="net.tcp://localhost:8090/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="ec32fcf0-0468-46c6-bb4f-0d0f1d329e74" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="6b549391-5aeb-44f2-98eb-5b352a643a80" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="fef77291-64f8-4ca7-9941-f387f31044b9" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
+    <MetadataFile FileName="theDiary.EasyDNS.Windows.Service1.xsd" MetadataType="Schema" ID="1333b84a-c792-4cd5-a301-8c6808e68bc3" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
+    <MetadataFile FileName="System.Net1.xsd" MetadataType="Schema" ID="cc30d53b-33ef-4b2f-854e-8fa9ef0a4065" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
+    <MetadataFile FileName="System.Net.Sockets1.xsd" MetadataType="Schema" ID="e5364614-a5a4-4403-bbff-46e2ac75c6c2" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="da1dee7c-e8e0-4b9f-81f3-b5b0a1d34a92" SourceId="1" SourceUrl="net.tcp://localhost:8090/EasyDNS/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

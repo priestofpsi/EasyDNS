@@ -47,4 +47,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="NetworkAdapterInfo" nillable="true" type="tns:NetworkAdapterInfo" />
+  <xs:complexType name="WirelessNetworkAdapterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NetworkAdapterInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Authentication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Channel" type="xs:int" />
+          <xs:element minOccurs="0" name="RadioType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceiveSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="SSID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Signal" type="xs:int" />
+          <xs:element minOccurs="0" name="TransmitSpeed" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WirelessNetworkAdapterInfo" nillable="true" type="tns:WirelessNetworkAdapterInfo" />
 </xs:schema>
