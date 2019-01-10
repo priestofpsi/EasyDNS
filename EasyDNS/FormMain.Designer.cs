@@ -245,6 +245,7 @@
             // 
             // imgClose
             // 
+            this.imgClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.imgClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgClose.Image = global::theDiary.EasyDNS.Windows.Properties.Resources.close_button_png_30226;
             this.imgClose.Location = new System.Drawing.Point(457, 1);
